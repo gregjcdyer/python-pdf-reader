@@ -25,8 +25,10 @@ def find_lines_in_text_file(file_path, pattern):
     # Print the total amounts for each store
     for store, total in store_totals.items():
         print(f"Total for {store}: {total:.2f}")
+    # Print the total amount for all stores
+    print(f"Total for all stores: {sum(store_totals.values()):.2f}")
 
 # Example usage
 file_path = 'files/transactions.txt'
-pattern = r'(\w{3}\. \d{1,2}) (\w{3}\. \d{1,2}) ([A-Z0-9 \*\-#]+) (\d+\.\d{2}(?: CR)?)'
+pattern = r'(\w{3}\. \d{1,2}) (\w{3}\. \d{1,2}) ([A-Z0-9 \*\-#\@]+) (\d+\.\d{2}(?: CR)?)'
 find_lines_in_text_file(file_path, pattern)
